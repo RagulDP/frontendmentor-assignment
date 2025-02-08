@@ -2,59 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | News homepage</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Mentor | Four Card Feature Section</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap">
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+      --verydarkblue: hsl(234, 12%, 34%);
+      --grayishblue: hsl(229, 6%, 66%);
+      --verylightgray: hsl(0, 0%, 98%);
+      --red: hsl(0, 78%, 62%);
+      --cyan: hsl(180, 62%, 55%);
+      --orange: hsl(34, 97%, 64%);
+      --blue: hsl(212, 86%, 64%);
+      --shadow: 0px 10px 10px hsla(234, 12%, 34%, 0.144);
+    }
+
+    body {
+      background-color: var(--verylightgray);
+      text-align: center;
+    }
+
+    /* Header Section */
+    .header-sec {
+      max-width: 500px;
+      margin: 70px auto 25px auto;
+    }
+
+    .header1 {
+      font-weight: 200;
+    }
+
+    .header1, .header2 {
+      color: var(--verydarkblue);
+    }
+
+    .header-p {
+      margin-top: 20px;
+      color: var(--grayishblue);
+      line-height: 1.6;
+    }
+
+    /* Cards Section */
+    .main-sec {
+      display: grid;
+      margin: 80px 0;
+    }
+
+    .card-sec {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      width: 80%;
+      margin: auto;
+    }
+
+    .middle-card-sec {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+    }
+
+    .card {
+      border-radius: 10px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+      border-top: 4px solid #000;
+      position: relative;
+      min-height: 258px;
+      background: white;
+    }
+
+    .card1 { border-color: var(--cyan); }
+    .card2 { border-color: var(--red); }
+    .card3 { border-color: var(--orange); }
+    .card4 { border-color: var(--blue); }
+
+    .card-text {
+      margin-bottom: 40px;
+    }
+
+    .card-text h3 {
+      color: var(--verydarkblue);
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .card-text p {
+      color: var(--grayishblue);
+      line-height: 1.6;
+    }
+
+    .icon {
+      position: absolute;
+      right: 35px;
+      bottom: 35px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 750px) {
+      .card-sec {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+
+      .header1, .header2, .header-p {
+        margin: 0 20px;
+      }
+    }
+
+    /* Footer */
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
 <body>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
-
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="header-sec">
+    <h1 class="header1">Reliable, efficient delivery</h1>
+    <h1 class="header2">Powered by Technology</h1>
+    <p class="header-p">Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful.</p>
   </div>
+
+  <!-- Cards Section -->
+  <div class="main-sec">
+    <div class="card-sec">
+
+      <!-- First Card -->
+      <div class="card card1">
+        <div class="card-text">
+          <h3>Supervisor</h3>
+          <p>Monitors activity to identify project roadblocks</p>
+        </div>
+        <img class="icon" src="icon-supervisor.svg" alt="">
+      </div>
+
+      <!-- Middle Cards -->
+      <div class="middle-card-sec">
+        <div class="card card2">
+          <div class="card-text">
+            <h3>Team Builder</h3>
+            <p>Scans our talent network to create the optimal team for your project</p>
+          </div>
+          <img class="icon" src="icon-team-builder.svg" alt="">
+        </div>
+
+        <div class="card card3">
+          <div class="card-text">
+            <h3>Karma</h3>
+            <p>Regularly evaluates our talent to ensure quality</p>
+          </div>
+          <img class="icon" src="icon-karma.svg" alt="">
+        </div>
+      </div>
+
+      <!-- Last Card -->
+      <div class="card card4">
+        <div class="card-text">
+          <h3>Calculator</h3>
+          <p>Uses data from past projects to provide better delivery estimates</p>
+        </div>
+        <img class="icon" src="icon-calculator.svg" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name</a>.
+    </p>
+  </footer>
+
 </body>
 </html>
